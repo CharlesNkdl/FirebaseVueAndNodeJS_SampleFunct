@@ -1,0 +1,18 @@
+/* When importing data from the storage, i had a lot of problems with CORS
+ I had difficulty to figure it out and not a lot of ressources
+ I found the solution in the google cloud documentation instead of the firebase documentation
+
+ 1/ Download GSutil https://cloud.google.com/storage/docs/gsutil_install?hl=fr by following instructions
+ 2/ make a cors.json like the one below
+ 3/ https://cloud.google.com/storage/docs/gsutil/commands/cors#synopsis
+ 4/ make the origin ["*"] while working on it
+ 5/ The following command "gsutil cors set cors.json gs://mybucket"
+
+*/
+[
+	{
+	  "origin": ["*"],
+	  "method": ["GET"],
+	  "maxAgeSeconds": 3600
+	}
+]
