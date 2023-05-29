@@ -12,7 +12,7 @@ const fs = require("fs");
 const ServiceAccount = require("../keyAdmin.json");
 admin.initializeApp({
   credential: admin.credential.cert(ServiceAccount),
-  storageBucket: "vueimagedb.appspot.com", // Remplacez par le nom de votre bucket Firebase Storage
+  storageBucket: "your bucket name without the gs:// "
 });
 fs.writeFile("storage.json", "", { flag: 'w' }, (error) => {
     if (error) {
